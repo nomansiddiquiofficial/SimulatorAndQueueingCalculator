@@ -133,11 +133,9 @@ def simulate_gg1(mean, variance, max, min, server_count):
     st.dataframe(df, hide_index=True)
 
     st.text(f"Average Service Time: {round((sum(service)/customer_count), 2)}")
-    st.text(f"Average Turn Around Time: {
-            round((sum(turnaround)/customer_count), 2)}")
+    st.text(f"Average Turn Around Time: {round((sum(turnaround)/customer_count), 2)}")
     st.text(f"Average Wait Time: {round((sum(waittime)/customer_count), 2)}")
-    st.text(f"Average Response Time: {
-            round((sum(responsetime)/customer_count), 2)}")
+    st.text(f"Average Response Time: {round((sum(responsetime)/customer_count), 2)}")
 
 #########################################################################################################
 
@@ -167,8 +165,7 @@ def simulate_gg1(mean, variance, max, min, server_count):
     for i in range(server_count):
         server_i_data = [(start_times[j], end_times[j])
                          for j in range(len(arrival)) if j % server_count == i]
-        server_i_labels = [f'Customer {
-            j+1}' for j in range(len(arrival)) if j % server_count == i]
+        server_i_labels = [f'Customer {j+1}' for j in range(len(arrival)) if j % server_count == i]
 
         fig = plot_individual_gantt_chart(
             server_i_data, server_i_labels, i + 1)
