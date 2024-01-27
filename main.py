@@ -83,7 +83,7 @@ def mainInit():
 
             elif model == "G/G/C":
 
-                st.subheader(f"Noraml and Uniform Distributions G/G/{server_count}")
+                st.subheader(f"Normal and Uniform Distributions G/G/{server_count}")
                 mean = st.number_input('Enter value of mean', value=9)
                 variance = st.number_input('Enter value of variance', value=5)
                 max = st.number_input('Enter value of max', value=10)
