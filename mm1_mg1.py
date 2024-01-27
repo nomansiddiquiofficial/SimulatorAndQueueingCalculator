@@ -178,6 +178,10 @@ def mm1(lam, mu, server_count):
         server_i_data = [(start_times[j], end_times[j])
                             for j in range(len(arrival)) if j % server_count == i]
         server_i_labels = [f'Customer {j+1}' for j in range(len(arrival)) if j % server_count == i]
+ 
+        fig = plot_individual_gantt_chart(
+            server_i_data, server_i_labels, i + 1)
+        st.pyplot(fig)
 
        
 ###################################################################################
